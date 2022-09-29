@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  api:
+    image: backend-server:latest
+    environment:
+      - LOG_LEVEL=info
+      - MONGO_USERNAME=mongouser
+      - MONGO_PASSWORD=mongopwd
+      - MONGO_DB=backend-database
+      - MONGO_HOST=mongo
+      - MONGO_PORT=27017
+
+    ports:
+      - '3001:3001'
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongouser
+      - MONGO_INITDB_ROOT_PASSWORD=mongopwd
+      - MONGO_INITDB_DATABASE=backend-database

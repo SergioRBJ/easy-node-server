@@ -1,0 +1,21 @@
+{
+  "name": "easy-node-server",
+  "version": "1.0.0",
+  "description": "backend project setup",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run cleanup && tsc && docker build -t backend-server .",
+    "start": "node build/server/server.js",
+    "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts",
+    "cleanup": "rimraf build/"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "Sergio Bernardi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SergioRBJ/easy-node-server/issues"
+  },
+  "homepage": "https://github.com/SergioRBJ/easy-node-server#readme"
+}
