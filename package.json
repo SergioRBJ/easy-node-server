@@ -4,9 +4,11 @@
   "description": "backend project setup",
   "main": "index.js",
   "scripts": {
-    "build": "npm run cleanup && tsc && docker build -t backend-server .",
-    "start": "node build/server/server.js",
+    "build": "npm run cleanup && tsc && docker build -t easy-node-server .",
+    "start": "node build/src/server.js",
     "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts",
+    "server:up": "docker compose up -d",
+    "server:down": "docker compose down",
     "cleanup": "rimraf build/"
   },
   "repository": {
@@ -17,5 +19,19 @@
   "bugs": {
     "url": "https://github.com/SergioRBJ/easy-node-server/issues"
   },
-  "homepage": "https://github.com/SergioRBJ/easy-node-server#readme"
+  "homepage": "https://github.com/SergioRBJ/easy-node-server#readme",
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "ts-node-dev": "^2.0.0",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@types/jest": "^29.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "jest": "^29.1.2",
+    "reflect-metadata": "^0.1.13"
+  }
 }
