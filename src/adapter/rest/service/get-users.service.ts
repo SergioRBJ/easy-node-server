@@ -3,7 +3,7 @@ import { Either, Left } from "../../../shared/errors/either";
 import UserRepositoryPort from "../../../domain/port/outbound/user-repository.port";
 import GetUserUseCase from "../../../domain/usecase/get-users.usecase";
 
-export default class GetUserService {
+export default class GetUsersService {
   constructor(
     readonly userRepository: UserRepositoryPort,
   ) { }
