@@ -2,9 +2,13 @@
 
 Initial setup for backend server.
 
-## Features
+## Features n Techs
 
  * Dockerized environments (Node.js server + Mongo database).
+ * Express for handle rest routes.
+ * Mongoose ODM for build NoSQL queries.
+ * Hexagonal Architecture.
+ * SOLID principles.
 
 ### Requirements
   * Node (16.15.1 or LTS)
