@@ -8,7 +8,7 @@ export default class UserController {
 
   buildRouter(): Router {
     const router = Router();
-    router.get('/users', this.getUsersHandler.bind(this));
+    router.get('/', this.getUsersHandler.bind(this));
     return router;
   }
 

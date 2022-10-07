@@ -2,6 +2,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import parser from 'body-parser';
 import AppError from './shared/errors/app-error';
+import routes from './routes';
 
 const app = express();
 
@@ -21,6 +22,8 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
     message: 'Internal Server Error',
   });
 });
+
+app.use(routes);
 
 app.get('/', (req, res) => {
   res.send('API running!');
