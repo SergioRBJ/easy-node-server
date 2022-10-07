@@ -9,7 +9,9 @@
     "dev": "tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts",
     "server:up": "docker compose up -d",
     "server:down": "docker compose down",
-    "cleanup": "rimraf build/"
+    "cleanup": "rimraf build/",
+    "lint": "eslint --ext .js,.ts .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
   },
   "repository": {
     "type": "git"
@@ -26,6 +28,8 @@
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
     "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1",
     "ts-node-dev": "^2.0.0",
     "tslib": "^2.4.0",
     "typescript": "^4.8.4"
