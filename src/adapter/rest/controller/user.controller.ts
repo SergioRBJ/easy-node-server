@@ -1,12 +1,10 @@
 import { Request, Response, Router } from 'express';
-import { isLeft } from "../../../shared/errors/either";
-import UserRepositoryPort from "../../../domain/port/outbound/user-repository.port";
-import GetUsersService from "../service/get-users.service";
+import { isLeft } from '../../../shared/errors/either';
+import UserRepositoryPort from '../../../domain/port/outbound/user-repository.port';
+import GetUsersService from '../service/get-users.service';
 
 export default class UserController {
-  constructor(
-    readonly userRepository: UserRepositoryPort,
-  ) { }
+  constructor(readonly userRepository: UserRepositoryPort) {}
 
   buildRouter(): Router {
     const router = Router();
@@ -15,9 +13,7 @@ export default class UserController {
   }
 
   getUsersHandler(req: Request, res: Response): Promise<void> {
-    const getUserService = new GetUsersService(
-      this.userRepository,
-    );
+    const getUserService = new GetUsersService(this.userRepository);
 
     const result = getUserService.execute();
 

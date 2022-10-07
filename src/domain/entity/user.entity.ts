@@ -1,3 +1,3 @@
 export default interface UserEntity {
-    username: string;
+  username: string;
 }

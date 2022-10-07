@@ -1,5 +1,5 @@
-import UserEntity from "../../entity/user.entity";
+import UserEntity from '../../entity/user.entity';
 
 export default interface UserRepositoryPort {
-    findUsers(): Promise<UserEntity[]>
+  findUsers(): Promise<UserEntity[]>;
 }
